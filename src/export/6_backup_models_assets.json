@@ -1,0 +1,20 @@
+{
+    "sources": [{
+        "type": "iotsitewise",
+        "iotSiteWiseConfiguration": {
+        "filters": [
+        {
+            "filterByAsset": {
+            "assetId": "<YOUR_ASSET_ID>",
+            "includeOffspring": true
+            }
+        }]
+        } 
+    }],
+    "destination": {
+        "type": "s3",
+        "s3Configuration": {
+            "location": ""
+        }
+    }
+}

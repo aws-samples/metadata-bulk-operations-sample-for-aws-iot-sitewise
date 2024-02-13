@@ -1,0 +1,152 @@
+{
+    "assetModels": [
+        {
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetModelName": "Sample_Welding Robot",
+            "assetModelProperties": [
+                {
+                    "dataType": "STRING",
+                    "externalId": "External_Id_Welding_Robot_Serial_Number",
+                    "name": "Serial Number",
+                    "type": {"attribute": {"defaultValue": "-"}},
+                    "unit": "-"
+                },
+                {
+                    "dataType": "DOUBLE",
+                    "externalId": "External_Id_Welding_Robot_Cycle_Count",
+                    "name": "CycleCount",
+                    "type": {"measurement": {}},
+                    "unit": "EA"
+                },
+                {
+                    "dataType": "DOUBLE",
+                    "externalId": "External_Id_Welding_Robot_Joint_1_Current",
+                    "name": "Joint 1 Current",
+                    "type": {"measurement": {}},
+                    "unit": "Amps"
+                },
+                {
+                    "dataType": "DOUBLE",
+                    "externalId": "External_Id_Welding_Robot_Joint_1_Max_Current",
+                    "name": "Max Joint 1 Current",
+                    "type": {
+                        "metric": {
+                            "expression": "max(joint1current)",
+                            "variables": [
+                                {
+                                    "name": "joint1current",
+                                    "value": {
+                                        "propertyExternalId": "External_Id_Welding_Robot_Joint_1_Current"
+                                    }
+                                }
+                            ],
+                            "window": {
+                                "tumbling": {
+                                    "interval": "5m"
+                                }
+                            }
+
+                    }},
+                    "unit": "Amps"
+                },
+                {
+                    "dataType": "DOUBLE",
+                    "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
+                    "name": "Joint 1 Temperature",
+                    "type": {"measurement": {}},
+                    "unit": "degC"
+                }
+            ]
+        }
+    ],
+    "assets": [
+        {
+            "assetExternalId": "External_Id_Welding_Robot_1",
+            "assetName": "Sample_Welding Robot 1",
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [{
+                "externalId": "External_Id_Welding_Robot_Serial_Number",
+                "attributeValue": "S1000"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Cycle_Count",
+                "alias": "AnyCompany/Chicago/Welding Line/S1000/Count"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Current",
+                "alias": "AnyCompany/Chicago/Welding Line/S1000/1/Current"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
+                "alias": "AnyCompany/Chicago/Welding Line/S1000/1/Temperature"
+            }
+            ]
+        },
+        {
+            "assetExternalId": "External_Id_Welding_Robot_2",
+            "assetName": "Sample_Welding Robot 2",
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [{
+                "externalId": "External_Id_Welding_Robot_Serial_Number",
+                "attributeValue": "S2000"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Cycle_Count",
+                "alias": "AnyCompany/Chicago/Welding Line/S2000/Count"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Current",
+                "alias": "AnyCompany/Chicago/Welding Line/S2000/1/Current"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
+                "alias": "AnyCompany/Chicago/Welding Line/S2000/1/Temperature"
+            }
+            ]
+        },
+        {
+            "assetExternalId": "External_Id_Welding_Robot_3",
+            "assetName": "Sample_Welding Robot 3",
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [{
+                "externalId": "External_Id_Welding_Robot_Serial_Number",
+                "attributeValue": "S3000"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Cycle_Count",
+                "alias": "AnyCompany/Chicago/Welding Line/S3000/Count"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Current",
+                "alias": "AnyCompany/Chicago/Welding Line/S3000/1/Current"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
+                "alias": "AnyCompany/Chicago/Welding Line/S3000/1/Temperature"
+            }
+            ]
+        },
+        {
+            "assetExternalId": "External_Id_Welding_Robot_4",
+            "assetName": "Sample_Welding Robot 4",
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [{
+                "externalId": "External_Id_Welding_Robot_Serial_Number",
+                "attributeValue": "S4000"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Cycle_Count",
+                "alias": "AnyCompany/Chicago/Welding Line/S4000/Count"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Current",
+                "alias": "AnyCompany/Chicago/Welding Line/S4000/1/Current"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
+                "alias": "AnyCompany/Chicago/Welding Line/S4000/1/Temperature"
+            }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,357 @@
+{
+  "assetModels" : [ {
+    "assetModelId" : "14981b1d-60c2-4202-be6f-84791c29576f",
+    "assetModelExternalId" : "External_Id_Welding_Robot",
+    "assetModelName" : "Sample_Welding Robot",
+    "assetModelProperties" : [ {
+      "id" : "7526466f-16d1-4228-9b24-9b61cb7719ce",
+      "externalId" : "External_Id_Welding_Robot_Serial_Number",
+      "name" : "Serial Number",
+      "dataType" : "STRING",
+      "unit" : "-",
+      "type" : {
+        "attribute" : {
+          "defaultValue" : "-"
+        }
+      }
+    }, {
+      "id" : "64c95987-85b0-4d10-b5c3-2a8f701e4705",
+      "externalId" : "External_Id_Welding_Robot_Cycle_Count",
+      "name" : "CycleCount",
+      "dataType" : "DOUBLE",
+      "unit" : "EA",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "4bd63362-b58e-44a6-9f63-7f57dfef98e7",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Current",
+      "name" : "Joint 1 Current",
+      "dataType" : "DOUBLE",
+      "unit" : "Amps",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "22868e3f-cb05-40fb-a5bf-0663f5c97632",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Max_Current",
+      "name" : "Max Joint 1 Current",
+      "dataType" : "DOUBLE",
+      "unit" : "Amps",
+      "type" : {
+        "metric" : {
+          "expression" : "max(joint1current)",
+          "variables" : [ {
+            "name" : "joint1current",
+            "value" : {
+              "propertyId" : "4bd63362-b58e-44a6-9f63-7f57dfef98e7"
+            }
+          } ],
+          "window" : {
+            "tumbling" : {
+              "interval" : "5m"
+            }
+          }
+        }
+      }
+    }, {
+      "id" : "6c4f0908-cb80-45d0-bf1b-b804d26a8c71",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Temperature",
+      "name" : "Joint 1 Temperature",
+      "dataType" : "DOUBLE",
+      "unit" : "degC",
+      "type" : {
+        "measurement" : { }
+      }
+    } ],
+    "assetModelCompositeModels" : [ ],
+    "assetModelHierarchies" : [ ],
+    "tags" : [ ]
+  }, {
+    "assetModelId" : "fb10eb12-58dd-4273-9048-b4f4f4d494e7",
+    "assetModelExternalId" : "External_Id_Site",
+    "assetModelName" : "Sample_Site",
+    "assetModelProperties" : [ ],
+    "assetModelCompositeModels" : [ ],
+    "assetModelHierarchies" : [ {
+      "id" : "f5194bf6-0404-4522-90b6-e90e54d28de7",
+      "externalId" : "External_Id_Site_TO_Line",
+      "name" : "Site to Line",
+      "childAssetModelId" : "c6003a5b-30ff-48c9-84a3-e4f324dc4a5f",
+      "childAssetModelExternalId" : "External_Id_Welding_Line"
+    } ],
+    "tags" : [ ]
+  }, {
+    "assetModelId" : "c6003a5b-30ff-48c9-84a3-e4f324dc4a5f",
+    "assetModelExternalId" : "External_Id_Welding_Line",
+    "assetModelName" : "Sample_Welding Line",
+    "assetModelProperties" : [ {
+      "id" : "194d0625-3474-4e38-85cb-e5875fcb815d",
+      "externalId" : "External_Id_Welding_Line_Availability",
+      "name" : "Availability",
+      "dataType" : "DOUBLE",
+      "unit" : "%",
+      "type" : {
+        "measurement" : { }
+      }
+    } ],
+    "assetModelCompositeModels" : [ ],
+    "assetModelHierarchies" : [ {
+      "id" : "b4457a8d-3195-4342-a134-aea9c693959f",
+      "externalId" : "External_Id_Welding_Line_TO_Robot",
+      "name" : "Line to Robot",
+      "childAssetModelId" : "14981b1d-60c2-4202-be6f-84791c29576f",
+      "childAssetModelExternalId" : "External_Id_Welding_Robot"
+    } ],
+    "tags" : [ ]
+  }, {
+    "assetModelId" : "cfda2b96-6a61-40aa-ab13-c22f8d6ff2dd",
+    "assetModelExternalId" : "External_Id_Company",
+    "assetModelName" : "Sample_Company",
+    "assetModelProperties" : [ ],
+    "assetModelCompositeModels" : [ ],
+    "assetModelHierarchies" : [ {
+      "id" : "4dda54cd-8c4c-42d7-839a-63ce53c0ecf7",
+      "externalId" : "External_Id_Company_TO_Site",
+      "name" : "Company to Site",
+      "childAssetModelId" : "fb10eb12-58dd-4273-9048-b4f4f4d494e7",
+      "childAssetModelExternalId" : "External_Id_Site"
+    } ],
+    "tags" : [ ]
+  } ],
+  "assets" : [ {
+    "assetId" : "2517f5f9-b123-4cae-a6dc-a162dd7f0071",
+    "assetExternalId" : "External_Id_Welding_Line_1",
+    "assetModelId" : "c6003a5b-30ff-48c9-84a3-e4f324dc4a5f",
+    "assetModelExternalId" : "External_Id_Welding_Line",
+    "assetName" : "Sample_Welding Line 1",
+    "assetProperties" : [ {
+      "id" : "194d0625-3474-4e38-85cb-e5875fcb815d",
+      "externalId" : "External_Id_Welding_Line_Availability",
+      "alias" : "AnyCompany/Chicago/Welding Line/Availability",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ {
+      "id" : "b4457a8d-3195-4342-a134-aea9c693959f",
+      "externalId" : "External_Id_Welding_Line_TO_Robot",
+      "childAssetId" : "f5491734-e58e-4726-a650-1247a5a9beeb",
+      "childAssetExternalId" : "External_Id_Welding_Robot_2"
+    }, {
+      "id" : "b4457a8d-3195-4342-a134-aea9c693959f",
+      "externalId" : "External_Id_Welding_Line_TO_Robot",
+      "childAssetId" : "19adca88-dbd3-40e8-86e3-7b9471fc6642",
+      "childAssetExternalId" : "External_Id_Welding_Robot_1"
+    } ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "19adca88-dbd3-40e8-86e3-7b9471fc6642",
+    "assetExternalId" : "External_Id_Welding_Robot_1",
+    "assetModelId" : "14981b1d-60c2-4202-be6f-84791c29576f",
+    "assetModelExternalId" : "External_Id_Welding_Robot",
+    "assetName" : "Sample_Welding Robot 1",
+    "assetProperties" : [ {
+      "id" : "7526466f-16d1-4228-9b24-9b61cb7719ce",
+      "externalId" : "External_Id_Welding_Robot_Serial_Number",
+      "attributeValue" : "S1001",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "64c95987-85b0-4d10-b5c3-2a8f701e4705",
+      "externalId" : "External_Id_Welding_Robot_Cycle_Count",
+      "alias" : "AnyCompany/Chicago/Welding Line/S1001/Count",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "4bd63362-b58e-44a6-9f63-7f57dfef98e7",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Current",
+      "alias" : "AnyCompany/Chicago/Welding Line/S1001/1/Current",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "22868e3f-cb05-40fb-a5bf-0663f5c97632",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Max_Current",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "6c4f0908-cb80-45d0-bf1b-b804d26a8c71",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Temperature",
+      "alias" : "AnyCompany/Chicago/Welding Line/S1001/1/Temperature",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "c5545b54-89cb-4229-ae6b-479982d1e566",
+    "assetExternalId" : "External_Id_Company_AnyCompany",
+    "assetModelId" : "cfda2b96-6a61-40aa-ab13-c22f8d6ff2dd",
+    "assetModelExternalId" : "External_Id_Company",
+    "assetName" : "Sample_AnyCompany Motor",
+    "assetProperties" : [ ],
+    "assetHierarchies" : [ {
+      "id" : "4dda54cd-8c4c-42d7-839a-63ce53c0ecf7",
+      "externalId" : "External_Id_Company_TO_Site",
+      "childAssetId" : "9fc725fb-349f-4586-8eb7-394924bfc5dd",
+      "childAssetExternalId" : "External_Id_Site_Chicago"
+    } ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "f5491734-e58e-4726-a650-1247a5a9beeb",
+    "assetExternalId" : "External_Id_Welding_Robot_2",
+    "assetModelId" : "14981b1d-60c2-4202-be6f-84791c29576f",
+    "assetModelExternalId" : "External_Id_Welding_Robot",
+    "assetName" : "Sample_Welding Robot 2",
+    "assetProperties" : [ {
+      "id" : "7526466f-16d1-4228-9b24-9b61cb7719ce",
+      "externalId" : "External_Id_Welding_Robot_Serial_Number",
+      "attributeValue" : "S2000",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "64c95987-85b0-4d10-b5c3-2a8f701e4705",
+      "externalId" : "External_Id_Welding_Robot_Cycle_Count",
+      "alias" : "AnyCompany/Chicago/Welding Line/S2000/Count",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "4bd63362-b58e-44a6-9f63-7f57dfef98e7",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Current",
+      "alias" : "AnyCompany/Chicago/Welding Line/S2000/1/Current",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "22868e3f-cb05-40fb-a5bf-0663f5c97632",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Max_Current",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "6c4f0908-cb80-45d0-bf1b-b804d26a8c71",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Temperature",
+      "alias" : "AnyCompany/Chicago/Welding Line/S2000/1/Temperature",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "92aba2d7-808a-4ad7-9eba-4a8762e5e172",
+    "assetExternalId" : "External_Id_Welding_Line_2",
+    "assetModelId" : "c6003a5b-30ff-48c9-84a3-e4f324dc4a5f",
+    "assetModelExternalId" : "External_Id_Welding_Line",
+    "assetName" : "Sample_Welding Line 2",
+    "assetProperties" : [ {
+      "id" : "194d0625-3474-4e38-85cb-e5875fcb815d",
+      "externalId" : "External_Id_Welding_Line_Availability",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ {
+      "id" : "b4457a8d-3195-4342-a134-aea9c693959f",
+      "externalId" : "External_Id_Welding_Line_TO_Robot",
+      "childAssetId" : "61d1bd03-a041-4164-a558-4fee673faafe",
+      "childAssetExternalId" : "External_Id_Welding_Robot_3"
+    }, {
+      "id" : "b4457a8d-3195-4342-a134-aea9c693959f",
+      "externalId" : "External_Id_Welding_Line_TO_Robot",
+      "childAssetId" : "1f4f53ac-fe70-4dc3-948b-667bb3b06592",
+      "childAssetExternalId" : "External_Id_Welding_Robot_4"
+    } ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "1f4f53ac-fe70-4dc3-948b-667bb3b06592",
+    "assetExternalId" : "External_Id_Welding_Robot_4",
+    "assetModelId" : "14981b1d-60c2-4202-be6f-84791c29576f",
+    "assetModelExternalId" : "External_Id_Welding_Robot",
+    "assetName" : "Sample_Welding Robot 4",
+    "assetProperties" : [ {
+      "id" : "7526466f-16d1-4228-9b24-9b61cb7719ce",
+      "externalId" : "External_Id_Welding_Robot_Serial_Number",
+      "attributeValue" : "S4000",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "64c95987-85b0-4d10-b5c3-2a8f701e4705",
+      "externalId" : "External_Id_Welding_Robot_Cycle_Count",
+      "alias" : "AnyCompany/Chicago/Welding Line/S4000/Count",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "4bd63362-b58e-44a6-9f63-7f57dfef98e7",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Current",
+      "alias" : "AnyCompany/Chicago/Welding Line/S4000/1/Current",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "22868e3f-cb05-40fb-a5bf-0663f5c97632",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Max_Current",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "6c4f0908-cb80-45d0-bf1b-b804d26a8c71",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Temperature",
+      "alias" : "AnyCompany/Chicago/Welding Line/S4000/1/Temperature",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "61d1bd03-a041-4164-a558-4fee673faafe",
+    "assetExternalId" : "External_Id_Welding_Robot_3",
+    "assetModelId" : "14981b1d-60c2-4202-be6f-84791c29576f",
+    "assetModelExternalId" : "External_Id_Welding_Robot",
+    "assetName" : "Sample_Welding Robot 3",
+    "assetProperties" : [ {
+      "id" : "7526466f-16d1-4228-9b24-9b61cb7719ce",
+      "externalId" : "External_Id_Welding_Robot_Serial_Number",
+      "attributeValue" : "S3000",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "64c95987-85b0-4d10-b5c3-2a8f701e4705",
+      "externalId" : "External_Id_Welding_Robot_Cycle_Count",
+      "alias" : "AnyCompany/Chicago/Welding Line/S3000/Count",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "4bd63362-b58e-44a6-9f63-7f57dfef98e7",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Current",
+      "alias" : "AnyCompany/Chicago/Welding Line/S3000/1/Current",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "22868e3f-cb05-40fb-a5bf-0663f5c97632",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Max_Current",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "6c4f0908-cb80-45d0-bf1b-b804d26a8c71",
+      "externalId" : "External_Id_Welding_Robot_Joint_1_Temperature",
+      "alias" : "AnyCompany/Chicago/Welding Line/S3000/1/Temperature",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "9fc725fb-349f-4586-8eb7-394924bfc5dd",
+    "assetExternalId" : "External_Id_Site_Chicago",
+    "assetModelId" : "fb10eb12-58dd-4273-9048-b4f4f4d494e7",
+    "assetModelExternalId" : "External_Id_Site",
+    "assetName" : "Sample_Chicago",
+    "assetProperties" : [ ],
+    "assetHierarchies" : [ {
+      "id" : "f5194bf6-0404-4522-90b6-e90e54d28de7",
+      "externalId" : "External_Id_Site_TO_Line",
+      "childAssetId" : "2517f5f9-b123-4cae-a6dc-a162dd7f0071",
+      "childAssetExternalId" : "External_Id_Welding_Line_1"
+    }, {
+      "id" : "f5194bf6-0404-4522-90b6-e90e54d28de7",
+      "externalId" : "External_Id_Site_TO_Line",
+      "childAssetId" : "92aba2d7-808a-4ad7-9eba-4a8762e5e172",
+      "childAssetExternalId" : "External_Id_Welding_Line_2"
+    } ],
+    "tags" : [ ]
+  } ]
+}

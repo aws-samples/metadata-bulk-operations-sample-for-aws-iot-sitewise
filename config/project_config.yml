@@ -1,0 +1,4 @@
+# Choose a s3 bucket to store bulk import and export files
+s3_bucket_name: <YOUR_S3_BUCKET_NAME>
+# Choose a prefix for job name
+job_name_prefix: Test_
