@@ -26,7 +26,7 @@
                 },
                 {
                     "externalId": "External_Id_Welding_Line_TO_Robot",
-                    "childAssetExternalId": "External_Id_Welding_Robot_4"
+                    "childAssetId": "32d0e31e-e854-44ec-8ccc-9b61b3527778"
                 }
             ]
         }

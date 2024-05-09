@@ -1,0 +1,23 @@
+{
+    "assets": [
+        {
+            "assetId": "32d0e31e-e854-44ec-8ccc-9b61b3527778",
+            "assetExternalId": "External_Id_Welding_Robot_4",
+            "assetName": "Sample_Welding Robot 4",
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [{
+                "externalId": "External_Id_Welding_Robot_Serial_Number",
+                "attributeValue": "S4000"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Cycle_Count",
+                "alias": "AnyCompany/Chicago/Welding Line/S4000/Count"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Current",
+                "alias": "AnyCompany/Chicago/Welding Line/S4000/1/Current"
+            }
+            ]
+        }
+    ]
+}

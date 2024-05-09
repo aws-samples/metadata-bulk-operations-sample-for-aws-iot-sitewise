@@ -30,6 +30,8 @@ The table below outlines common scenarios for customers with industrial manufact
 | Relocate assets | Bulk import
 | Backup asset models and assets | Bulk export
 | Promote asset models and assets to another environment | Bulk export & import
+| Apply external identifiers | Bulk import
+| Compose asset models | Bulk import
 
 ## How does it work?
 
@@ -112,6 +114,19 @@ Redo the  [Pre-requisites](#pre-requisites) and [Configure](#1-configure) in you
 
 !["Migrate asset models and assets to another environment"](assets/images/migrate_to_another_environment.png)
 
+#### Apply external identifiers
+Apply external identifier to an existing asset, for example, **Sample_Welding Robot 4**.
+
+`python3 src/import/main.py --bulk-definitions-file 8_apply_external_identifier.json`
+
+!["Relocate assets"](assets/images/apply_external_identifier.png)
+
+#### Compose asset models
+Compose **Sample_Welding Robot** asset model by independently modeling components in a welding robot such as robot joints. 
+
+`python3 src/import/main.py --bulk-definitions-file 9_compose_models.json`
+
+!["Relocate assets"](assets/images/compose_asset_model.png)
 ### 3. Run bulk export scenarios
 #### Backup asset models and assets
 

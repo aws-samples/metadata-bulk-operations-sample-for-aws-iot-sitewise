@@ -19,11 +19,6 @@
 #
 # Example:
 # python3 src/import/main.py --bulk-definitions-file 1_onboard_models_assets.json
-# python3 src/import/main.py --bulk-definitions-file 2_onboard_additional_assets.json
-# python3 src/import/main.py --bulk-definitions-file 3_onboard_new_properties.json
-# python3 src/import/main.py --bulk-definitions-file 4_fix_incorrect_datastreams.json
-# python3 src/import/main.py --bulk-definitions-file 5_relocate_assets.json
-# python3 src/import/main.py --bulk-definitions-file 7_promote_to_another_environment.json
 
 import os
 from datetime import datetime
