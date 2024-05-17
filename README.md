@@ -158,6 +158,9 @@ Run the following to export the definitions of the given asset and all the asset
 ## Clean up
 If you no longer require the solution, ensure you remove the resources to avoid incurring costs.
 
+> [!CAUTION]
+> The clean up script removes all data streams associated with the sample assets from this code repository. If any data streams with data are linked to these sample assets, disassociate them before running the clean up script to avoid data loss.
+
 Run the following to remove all the asset models and assets created using this sample repository.
 
 `python3 src/remove_sitewise_resources.py --asset-external-id External_Id_Company_AnyCompany`
