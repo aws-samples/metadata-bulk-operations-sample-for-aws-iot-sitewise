@@ -1,0 +1,14 @@
+{
+    "assets": [
+        {
+            "assetExternalId": "External_Id_Welding_Robot_1",
+            "assetName": "Sample_Welding Robot 1",
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [{
+                "externalId": "External_Id_Welding_Robot_Serial_Number",
+                "attributeValue": "S1001"
+            }
+            ]
+        }
+    ]
+}

@@ -33,6 +33,7 @@ import argparse
 client = boto3.client('iotsitewise')
 
 asset_model_ids_to_delete = []
+component_model_asset_model_ids_to_delete = []
 asset_ids_to_delete = []
 data_stream_prefix = "/Devices/[Chicago Welding Simulator]"
 workshop_gateway_name = "Workshop_Chicago_Gateway"
@@ -114,13 +115,25 @@ def remove_properties_hierarchies_from_all_models(asset_model_id):
     for asset_model_hierarchy in asset_model_hierarchies:
         child_asset_model_ids.append(asset_model_hierarchy["childAssetModelId"])
 
-    # Remove composite models such as L4E definitions
+    # Handle composite models
     composite_model_summaries = describe_asset_model_res["assetModelCompositeModelSummaries"]
     for composite_model in composite_model_summaries:
-        client.delete_asset_model_composite_model(assetModelId=asset_model_id, 
-            assetModelCompositeModelId=composite_model["id"])
-        confirm_model_update_complete(asset_model_id)
-
+        composite_model_id = composite_model["id"]
+        
+        desc_response = client.describe_asset_model_composite_model(
+        assetModelId=asset_model_id,
+        assetModelCompositeModelId=composite_model_id
+        )
+        # Capture any model component Ids that needs to be deleted later
+        # Assuming only one level of model composition relationship.
+        component_model_asset_model_id = desc_response["compositionDetails"]["compositionRelationship"][0]["id"]
+        component_model_asset_model_ids_to_delete.append(component_model_asset_model_id)
+        
+        # Delete any composite models
+        #client.delete_asset_model_composite_model(assetModelId=asset_model_id, 
+        #    assetModelCompositeModelId=composite_model_id)
+        #confirm_model_update_complete(asset_model_id)
+        
     client.update_asset_model(
     assetModelId=asset_model_id,
     assetModelName=asset_model_name,
@@ -163,9 +176,22 @@ def confirm_assets_do_not_exist(asset_ids, asset_model_id):
         break
     return assets_do_not_exist
 
+def confirm_model_deleted(asset_model_id):
+    complete_status = False
+    time.sleep(2) # wait a few seconds for the status to update
+    while True:
+        try:
+            response = client.describe_asset_model(assetModelId=asset_model_id)
+        except client.exceptions.ResourceNotFoundException:
+            complete_status = True
+            break
+        time.sleep(5)
+    return complete_status
+    
 def delete_asset_model(asset_model_id):
     confirm_assets_do_not_exist(asset_ids_to_delete, asset_model_id)
-    client.delete_asset_model(assetModelId=asset_model_id) 
+    client.delete_asset_model(assetModelId=asset_model_id)
+    confirm_model_deleted(asset_model_id)
 
 if __name__ == "__main__":
     # Get argument inputs
@@ -186,6 +212,8 @@ if __name__ == "__main__":
         delete_assets(asset_ids_to_delete)
         print(f'\nRemoving asset models..')
         delete_asset_models(asset_model_ids_to_delete)
+        print(f'\nRemoving component models..')
+        delete_asset_models(component_model_asset_model_ids_to_delete)
     else:
         print(f'\nAsset does not exist, no asset models and assets to remove')
 

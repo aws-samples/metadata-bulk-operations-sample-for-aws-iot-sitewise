@@ -48,52 +48,13 @@
 
                     }},
                     "unit": "Amps"
-                }
-            ]
-        },
-        {
-            "assetModelExternalId": "External_Id_Welding_Line",
-            "assetModelName": "Sample_Welding Line",
-            "assetModelProperties": [
+                },
                 {
                     "dataType": "DOUBLE",
-                    "externalId": "External_Id_Welding_Line_Availability",
-                    "name": "Availability",
+                    "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
+                    "name": "Joint 1 Temperature",
                     "type": {"measurement": {}},
-                    "unit": "%"
-                }
-            ],
-            "assetModelHierarchies": [
-                {
-                    "externalId": "External_Id_Welding_Line_TO_Robot",
-                    "name": "Line to Robot",
-                    "childAssetModelExternalId": "External_Id_Welding_Robot"
-                }
-            ]
-        },
-        {
-            "assetModelExternalId": "External_Id_Site",
-            "assetModelName": "Sample_Site",
-            "assetModelProperties": [
-            ],
-            "assetModelHierarchies": [
-                {
-                    "externalId": "External_Id_Site_TO_Line",
-                    "name": "Site to Line",
-                    "childAssetModelExternalId": "External_Id_Welding_Line"
-                }
-            ]
-        },
-        {
-            "assetModelExternalId": "External_Id_Company",
-            "assetModelName": "Sample_Company",
-            "assetModelProperties": [
-            ],
-            "assetModelHierarchies": [
-                {
-                    "externalId": "External_Id_Company_TO_Site",
-                    "name": "Company to Site",
-                    "childAssetModelExternalId": "External_Id_Site"
+                    "unit": "degC"
                 }
             ]
         }
@@ -102,27 +63,46 @@
         {
             "assetExternalId": "External_Id_Welding_Robot_1",
             "assetName": "Sample_Welding Robot 1",
-            "assetModelExternalId": "External_Id_Welding_Robot"
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
+                "alias": "AnyCompany/Chicago/Welding Line/S1000/1/Temperature"
+            }
+            ]
         },
         {
             "assetExternalId": "External_Id_Welding_Robot_2",
             "assetName": "Sample_Welding Robot 2",
-            "assetModelExternalId": "External_Id_Welding_Robot"
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
+                "alias": "AnyCompany/Chicago/Welding Line/S2000/1/Temperature"
+            }
+            ]
         },
         {
-            "assetExternalId": "External_Id_Welding_Line_1",
-            "assetName": "Sample_Welding Line 1",
-            "assetModelExternalId": "External_Id_Welding_Line"
+            "assetExternalId": "External_Id_Welding_Robot_3",
+            "assetName": "Sample_Welding Robot 3",
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
+                "alias": "AnyCompany/Chicago/Welding Line/S3000/1/Temperature"
+            }
+            ]
         },
         {
-            "assetExternalId": "External_Id_Site_Chicago",
-            "assetName": "Sample_Chicago",
-            "assetModelExternalId": "External_Id_Site"
-        },
-        {
-            "assetExternalId": "External_Id_Company_AnyCompany",
-            "assetName": "Sample_AnyCompany Motor",
-            "assetModelExternalId": "External_Id_Company"
+            "assetId": "44d0e31e-e854-44ec-8ccc-9b61b3527778",
+            "assetName": "Sample_Welding Robot 4",
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
+                "alias": "AnyCompany/Chicago/Welding Line/S4000/1/Temperature"
+            }
+            ]
         }
     ]
 }

@@ -70,14 +70,14 @@
       "type" : "CUSTOM",
       "properties" : [ 
           {
-        "id": "eb6a35db-0858-4637-b972-a20266b7c100",
+        "id": "446a35db-0858-4637-b972-a20266b7c100",
         "name" : "Joint Temperature",
         "dataType" : "DOUBLE",
         "type" : {
           "measurement" : { }
         }
       }, {
-        "id": "eb6a35db-0858-4637-b972-a20266b7c101",
+        "id": "446a35db-0858-4637-b972-a20266b7c101",
         "name" : "Joint Current",
         "dataType" : "DOUBLE",
         "type" : {
@@ -85,7 +85,7 @@
         }
       },
       {
-        "id": "eb6a35db-0858-4637-b972-a20266b7c102",
+        "id": "446a35db-0858-4637-b972-a20266b7c102",
         "name" : "Max Current",
         "dataType" : "DOUBLE",
         "type" : {
@@ -94,7 +94,7 @@
             "variables" : [ {
               "name" : "jointcurrent",
               "value" : {
-                "propertyId" : "eb6a35db-0858-4637-b972-a20266b7c101"
+                "propertyId" : "446a35db-0858-4637-b972-a20266b7c101"
               }
             } ],
             "window" : {
@@ -115,23 +115,14 @@
             "assetExternalId": "External_Id_Welding_Robot_1",
             "assetName": "Sample_Welding Robot 1",
             "assetModelExternalId": "External_Id_Welding_Robot",
-            "assetProperties": [{
-                "externalId": "External_Id_Welding_Robot_Serial_Number",
-                "attributeValue": "S1001",
-                "retainDataOnAliasChange": "TRUE"
-            },
+            "assetProperties": [
             {
-                "externalId": "External_Id_Welding_Robot_Cycle_Count",
-                "alias": "AnyCompany/Chicago/Welding Line/S1001/Count",
-                "retainDataOnAliasChange": "TRUE"
-            },
-            {
-                "id": "eb6a35db-0858-4637-b972-a20266b7c101",
+                "id": "446a35db-0858-4637-b972-a20266b7c101",
                 "alias": "AnyCompany/Chicago/Welding Line/S1001/1/Current",
                 "retainDataOnAliasChange": "FALSE"
             },
             {
-                "id": "eb6a35db-0858-4637-b972-a20266b7c100",
+                "id": "446a35db-0858-4637-b972-a20266b7c100",
                 "alias": "AnyCompany/Chicago/Welding Line/S1001/1/Temperature",
                 "retainDataOnAliasChange": "FALSE"
             }
@@ -141,23 +132,14 @@
             "assetExternalId": "External_Id_Welding_Robot_2",
             "assetName": "Sample_Welding Robot 2",
             "assetModelExternalId": "External_Id_Welding_Robot",
-            "assetProperties": [{
-                "externalId": "External_Id_Welding_Robot_Serial_Number",
-                "attributeValue": "S2000",
-                "retainDataOnAliasChange": "TRUE"
-            },
+            "assetProperties": [
             {
-                "externalId": "External_Id_Welding_Robot_Cycle_Count",
-                "alias": "AnyCompany/Chicago/Welding Line/S2000/Count",
-                "retainDataOnAliasChange": "TRUE"
-            },
-            {
-                "id": "eb6a35db-0858-4637-b972-a20266b7c101",
+                "id": "446a35db-0858-4637-b972-a20266b7c101",
                 "alias": "AnyCompany/Chicago/Welding Line/S2000/1/Current",
                 "retainDataOnAliasChange": "FALSE"
             },
             {
-                "id": "eb6a35db-0858-4637-b972-a20266b7c100",
+                "id": "446a35db-0858-4637-b972-a20266b7c100",
                 "alias": "AnyCompany/Chicago/Welding Line/S2000/1/Temperature",
                 "retainDataOnAliasChange": "FALSE"
             }
@@ -167,23 +149,14 @@
             "assetExternalId": "External_Id_Welding_Robot_3",
             "assetName": "Sample_Welding Robot 3",
             "assetModelExternalId": "External_Id_Welding_Robot",
-            "assetProperties": [{
-                "externalId": "External_Id_Welding_Robot_Serial_Number",
-                "attributeValue": "S3000",
-                "retainDataOnAliasChange": "TRUE"
-            },
+            "assetProperties": [
             {
-                "externalId": "External_Id_Welding_Robot_Cycle_Count",
-                "alias": "AnyCompany/Chicago/Welding Line/S3000/Count",
-                "retainDataOnAliasChange": "TRUE"
-            },
-            {
-                "id": "eb6a35db-0858-4637-b972-a20266b7c101",
+                "id": "446a35db-0858-4637-b972-a20266b7c101",
                 "alias": "AnyCompany/Chicago/Welding Line/S3000/1/Current",
                 "retainDataOnAliasChange": "FALSE"
             },
             {
-                "id": "eb6a35db-0858-4637-b972-a20266b7c100",
+                "id": "446a35db-0858-4637-b972-a20266b7c100",
                 "alias": "AnyCompany/Chicago/Welding Line/S3000/1/Temperature",
                 "retainDataOnAliasChange": "FALSE"
             }
@@ -193,23 +166,14 @@
             "assetExternalId": "External_Id_Welding_Robot_4",
             "assetName": "Sample_Welding Robot 4",
             "assetModelExternalId": "External_Id_Welding_Robot",
-            "assetProperties": [{
-                "externalId": "External_Id_Welding_Robot_Serial_Number",
-                "attributeValue": "S4000",
-                "retainDataOnAliasChange": "TRUE"
-            },
+            "assetProperties": [
             {
-                "externalId": "External_Id_Welding_Robot_Cycle_Count",
-                "alias": "AnyCompany/Chicago/Welding Line/S4000/Count",
-                "retainDataOnAliasChange": "TRUE"
-            },
-            {
-                "id": "eb6a35db-0858-4637-b972-a20266b7c101",
+                "id": "446a35db-0858-4637-b972-a20266b7c101",
                 "alias": "AnyCompany/Chicago/Welding Line/S4000/1/Current",
                 "retainDataOnAliasChange": "FALSE"
             },
             {
-                "id": "eb6a35db-0858-4637-b972-a20266b7c100",
+                "id": "446a35db-0858-4637-b972-a20266b7c100",
                 "alias": "AnyCompany/Chicago/Welding Line/S4000/1/Temperature",
                 "retainDataOnAliasChange": "FALSE"
             }

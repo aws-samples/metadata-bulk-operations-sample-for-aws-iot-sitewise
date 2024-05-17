@@ -1,0 +1,34 @@
+{
+    "assets": [
+        {
+            "assetExternalId": "External_Id_Welding_Line_1",
+            "assetName": "Sample_Welding Line 1",
+            "assetModelExternalId": "External_Id_Welding_Line",
+            "assetHierarchies": [
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "childAssetExternalId": "External_Id_Welding_Robot_1"
+                },
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "childAssetExternalId": "External_Id_Welding_Robot_2"
+                }
+            ]
+        },
+        {
+            "assetExternalId": "External_Id_Welding_Line_2",
+            "assetName": "Sample_Welding Line 2",
+            "assetModelExternalId": "External_Id_Welding_Line",
+            "assetHierarchies": [
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "childAssetExternalId": "External_Id_Welding_Robot_3"
+                },
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "childAssetId": "44d0e31e-e854-44ec-8ccc-9b61b3527778"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "assetModels": [],
+    "assets": [
+        {
+            "assetExternalId": "External_Id_Welding_Robot_1",
+            "assetName": "Sample_Welding Robot 1",
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [
+            {
+                "externalId": "External_Id_Welding_Robot_Cycle_Count",
+                "alias": "AnyCompany/Chicago/Welding Line/S1000/Count",
+                "retainDataOnAliasChange": "FALSE"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Current",
+                "alias": "AnyCompany/Chicago/Welding Line/S1000/1/Current",
+                "retainDataOnAliasChange": "FALSE"
+            }
+            ]
+        },
+        {
+            "assetExternalId": "External_Id_Welding_Robot_2",
+            "assetName": "Sample_Welding Robot 2",
+            "assetModelExternalId": "External_Id_Welding_Robot",
+            "assetProperties": [
+            {
+                "externalId": "External_Id_Welding_Robot_Cycle_Count",
+                "alias": "AnyCompany/Chicago/Welding Line/S2000/Count",
+                "retainDataOnAliasChange": "FALSE"
+            },
+            {
+                "externalId": "External_Id_Welding_Robot_Joint_1_Current",
+                "alias": "AnyCompany/Chicago/Welding Line/S2000/1/Current",
+                "retainDataOnAliasChange": "FALSE"
+            }
+            ]
+        },
+        {
+            "assetExternalId": "External_Id_Welding_Line_1",
+            "assetName": "Sample_Welding Line 1",
+            "assetModelExternalId": "External_Id_Welding_Line",
+            "assetProperties": [{
+                "externalId": "External_Id_Welding_Line_Availability",
+                "alias": "AnyCompany/Chicago/Welding Line/Availability",
+                "retainDataOnAliasChange": "FALSE"
+            }
+            ],
+            "assetHierarchies": [
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "childAssetExternalId": "External_Id_Welding_Robot_1"
+                },
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "childAssetExternalId": "External_Id_Welding_Robot_2"
+                }
+            ]
+        }
+    ]
+}

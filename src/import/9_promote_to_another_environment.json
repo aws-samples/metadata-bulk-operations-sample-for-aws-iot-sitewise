@@ -45,7 +45,7 @@
                                     "interval": "5m"
                                 }
                             }
-
+  
                     }},
                     "unit": "Amps"
                 },
@@ -57,6 +57,52 @@
                     "unit": "degC"
                 }
             ]
+        },
+        {
+            "assetModelExternalId": "External_Id_Welding_Line",
+            "assetModelName": "Sample_Welding Line",
+            "assetModelProperties": [
+                {
+                    "dataType": "DOUBLE",
+                    "externalId": "External_Id_Welding_Line_Availability",
+                    "name": "Availability",
+                    "type": {"measurement": {}},
+                    "unit": "%"
+                }
+            ],
+            "assetModelHierarchies": [
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "name": "Line to Robot",
+                    "childAssetModelExternalId": "External_Id_Welding_Robot"
+                }
+            ]
+        },
+        {
+            "assetModelExternalId": "External_Id_Site",
+            "assetModelName": "Sample_Site",
+            "assetModelProperties": [
+            ],
+            "assetModelHierarchies": [
+                {
+                    "externalId": "External_Id_Site_TO_Line",
+                    "name": "Site to Line",
+                    "childAssetModelExternalId": "External_Id_Welding_Line"
+                }
+            ]
+        },
+        {
+            "assetModelExternalId": "External_Id_Company",
+            "assetModelName": "Sample_Company",
+            "assetModelProperties": [
+            ],
+            "assetModelHierarchies": [
+                {
+                    "externalId": "External_Id_Company_TO_Site",
+                    "name": "Company to Site",
+                    "childAssetModelExternalId": "External_Id_Site"
+                }
+            ]
         }
     ],
     "assets": [
@@ -66,19 +112,19 @@
             "assetModelExternalId": "External_Id_Welding_Robot",
             "assetProperties": [{
                 "externalId": "External_Id_Welding_Robot_Serial_Number",
-                "attributeValue": "S1000"
+                "attributeValue": "S1001"
             },
             {
                 "externalId": "External_Id_Welding_Robot_Cycle_Count",
-                "alias": "AnyCompany/Chicago/Welding Line/S1000/Count"
+                "alias": "AnyCompany/Chicago/Welding Line/S1001/Count"
             },
             {
                 "externalId": "External_Id_Welding_Robot_Joint_1_Current",
-                "alias": "AnyCompany/Chicago/Welding Line/S1000/1/Current"
+                "alias": "AnyCompany/Chicago/Welding Line/S1001/1/Current"
             },
             {
                 "externalId": "External_Id_Welding_Robot_Joint_1_Temperature",
-                "alias": "AnyCompany/Chicago/Welding Line/S1000/1/Temperature"
+                "alias": "AnyCompany/Chicago/Welding Line/S1001/1/Temperature"
             }
             ]
         },
@@ -127,7 +173,7 @@
             ]
         },
         {
-            "assetId": "32d0e31e-e854-44ec-8ccc-9b61b3527778",
+            "assetId": "44d0e31e-e854-44ec-8ccc-9b61b3527778",
             "assetName": "Sample_Welding Robot 4",
             "assetModelExternalId": "External_Id_Welding_Robot",
             "assetProperties": [{
@@ -147,6 +193,62 @@
                 "alias": "AnyCompany/Chicago/Welding Line/S4000/1/Temperature"
             }
             ]
+        },
+        {
+            "assetExternalId": "External_Id_Welding_Line_1",
+            "assetName": "Sample_Welding Line 1",
+            "assetModelExternalId": "External_Id_Welding_Line",
+            "assetHierarchies": [
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "childAssetExternalId": "External_Id_Welding_Robot_1"
+                },
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "childAssetExternalId": "External_Id_Welding_Robot_2"
+                }
+            ]
+        },
+        {
+            "assetExternalId": "External_Id_Welding_Line_2",
+            "assetName": "Sample_Welding Line 2",
+            "assetModelExternalId": "External_Id_Welding_Line",
+            "assetHierarchies": [
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "childAssetExternalId": "External_Id_Welding_Robot_3"
+                },
+                {
+                    "externalId": "External_Id_Welding_Line_TO_Robot",
+                    "childAssetId": "44d0e31e-e854-44ec-8ccc-9b61b3527778"
+                }
+            ]
+        },
+        {
+            "assetExternalId": "External_Id_Site_Chicago",
+            "assetName": "Sample_Chicago",
+            "assetModelExternalId": "External_Id_Site",
+            "assetHierarchies": [
+                {
+                    "externalId": "External_Id_Site_TO_Line",
+                    "childAssetExternalId": "External_Id_Welding_Line_1"
+                },
+                {
+                    "externalId": "External_Id_Site_TO_Line",
+                    "childAssetExternalId": "External_Id_Welding_Line_2"
+                }
+            ]
+        },
+        {
+            "assetExternalId": "External_Id_Company_AnyCompany",
+            "assetName": "Sample_AnyCompany Motor",
+            "assetModelExternalId": "External_Id_Company",
+            "assetHierarchies": [
+                {
+                    "externalId": "External_Id_Company_TO_Site",
+                    "childAssetExternalId": "External_Id_Site_Chicago"
+                }
+            ]
         }
     ]
-}
+  }

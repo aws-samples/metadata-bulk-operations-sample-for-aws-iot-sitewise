@@ -24,6 +24,8 @@ The table below outlines common scenarios for customers with industrial manufact
 | Scenario | Operations involved
 |:-|:-|
 | Onboard initial asset models & assets | Bulk import
+| Define asset hierarchy | Bulk import
+| Associate data streams with assets | Bulk import
 | Onboard additional assets | Bulk import
 | Create new properties | Bulk import
 | Fix manual errors | Bulk import
@@ -71,37 +73,50 @@ Update `config/project_config.yml` to provide necessary information for the job.
 ### 2. Run bulk import scenarios
 
 #### Onboard asset models and assets
-Create an initial asset hierarchy in AWS IoT SiteWise for an automotive manufacturing company.
+Create an initial set of asset models and assets in AWS IoT SiteWise for an automotive manufacturing company.
 
 `python3 src/import/main.py --bulk-definitions-file 1_onboard_models_assets.json`
 
 !["Onboard asset models and assets"](assets/images/onboard_models_assets.png)
 
+#### Define asset hierarchy
+Define relationships between assets and create an asset hierarchy.
+
+`python3 src/import/main.py --bulk-definitions-file 2_define_asset_hierarchy.json`
+
+!["Define asset hierarchy"](assets/images/define_asset_hierarchy.png)
+
+#### Associate data streams with assets
+Associate data streams with assets for contextualization.
+
+`python3 src/import/main.py --bulk-definitions-file 3_associate_data_streams_with_assets.json`
+!["Associate data streams with assets"](assets/images/associate_data_streams_with_assets.png)
+
 #### Onboard additional assets
 Create additional assets **Sample_Welding Robot 3** and **Sample_Welding Robot 4** and a new production line **Sample_Welding Line 2**.
 
-`python3 src/import/main.py --bulk-definitions-file 2_onboard_additional_assets.json`
+`python3 src/import/main.py --bulk-definitions-file 4_onboard_additional_assets.json`
 
 !["Onboard additional assets"](assets/images/onboard_additional_assets.png)
 
 #### Create new properties
 Add a new property **Joint 1 Temperature** to **Sample_Welding Robot** asset model.
 
-`python3 src/import/main.py --bulk-definitions-file 3_onboard_new_properties.json`
+`python3 src/import/main.py --bulk-definitions-file 5_onboard_new_properties.json`
 
 !["Create new properties"](assets/images/onboard_new_properties.png)
 
 #### Fix manual errors
 Correct the serial number of **Sample_Welding Robot 1** by replacing the old serial number `S1000` with `S1001`.
 
-`python3 src/import/main.py --bulk-definitions-file 4_fix_incorrect_datastreams.json`
+`python3 src/import/main.py --bulk-definitions-file 6_fix_incorrect_datastreams.json`
 
 !["Fix manual errors"](assets/images/fix_incorrect_datastreams.png)
 
 #### Relocate assets
 Re-arrange assets to adapt to changes in production line operations. Move **Sample_Welding Robot 3** asset to **Sample_Welding Line 2** production line.
 
-`python3 src/import/main.py --bulk-definitions-file 5_relocate_assets.json`
+`python3 src/import/main.py --bulk-definitions-file 7_relocate_assets.json`
 
 !["Relocate assets"](assets/images/relocate_assets.png)
 
@@ -110,21 +125,21 @@ Promote the resources from developement to QA environment. The definitions file 
 
 Redo the  [Pre-requisites](#pre-requisites) and [Configure](#1-configure) in your target account, then run the following command.
 
-`python3 src/import/main.py --bulk-definitions-file 7_promote_to_another_environment.json`
+`python3 src/import/main.py --bulk-definitions-file 9_promote_to_another_environment.json`
 
 !["Migrate asset models and assets to another environment"](assets/images/migrate_to_another_environment.png)
 
 #### Apply external identifiers
 Apply external identifier to an existing asset, for example, **Sample_Welding Robot 4**.
 
-`python3 src/import/main.py --bulk-definitions-file 8_apply_external_identifier.json`
+`python3 src/import/main.py --bulk-definitions-file 10_apply_external_identifier.json`
 
 !["Relocate assets"](assets/images/apply_external_identifier.png)
 
 #### Compose asset models
 Compose **Sample_Welding Robot** asset model by independently modeling components in a welding robot such as robot joints. 
 
-`python3 src/import/main.py --bulk-definitions-file 9_compose_models.json`
+`python3 src/import/main.py --bulk-definitions-file 11_compose_models.json`
 
 !["Relocate assets"](assets/images/compose_asset_model.png)
 ### 3. Run bulk export scenarios
@@ -136,7 +151,7 @@ Replace <YOUR_ASSET_ID> in [6_backup_models_assets.json](src/export/6_backup_mod
 
 Run the following to export the definitions of the given asset and all the assets below it in the hierachy.
 
-`python3 src/export/main.py --job-config-file 6_backup_models_assets.json`
+`python3 src/export/main.py --job-config-file 8_backup_models_assets.json`
 
 !["Backup asset models and assets"](assets/images/backup_models_assets.png)
 

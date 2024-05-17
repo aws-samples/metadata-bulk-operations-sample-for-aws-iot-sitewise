@@ -1,4 +1,5 @@
 {
+    "assetModels": [],
     "assets": [
         {
             "assetExternalId": "External_Id_Welding_Line_1",
@@ -16,17 +17,24 @@
             ]
         },
         {
-            "assetExternalId": "External_Id_Welding_Line_2",
-            "assetName": "Sample_Welding Line 2",
-            "assetModelExternalId": "External_Id_Welding_Line",
+            "assetExternalId": "External_Id_Site_Chicago",
+            "assetName": "Sample_Chicago",
+            "assetModelExternalId": "External_Id_Site",
             "assetHierarchies": [
                 {
-                    "externalId": "External_Id_Welding_Line_TO_Robot",
-                    "childAssetExternalId": "External_Id_Welding_Robot_3"
-                },
+                    "externalId": "External_Id_Site_TO_Line",
+                    "childAssetExternalId": "External_Id_Welding_Line_1"
+                }
+            ]
+        },
+        {
+            "assetExternalId": "External_Id_Company_AnyCompany",
+            "assetName": "Sample_AnyCompany Motor",
+            "assetModelExternalId": "External_Id_Company",
+            "assetHierarchies": [
                 {
-                    "externalId": "External_Id_Welding_Line_TO_Robot",
-                    "childAssetId": "32d0e31e-e854-44ec-8ccc-9b61b3527778"
+                    "externalId": "External_Id_Company_TO_Site",
+                    "childAssetExternalId": "External_Id_Site_Chicago"
                 }
             ]
         }
